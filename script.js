@@ -9,8 +9,6 @@ let qualityChart;
  */
 async function loadCSVData() {
     try {
-        console.log('Fetching data from CSV file...');
-        
         // Fetch the CSV file from the server
         const response = await fetch('data.csv');
         
@@ -43,7 +41,6 @@ async function loadCSVData() {
  */
 function parseCSVData(csvText) {
     return new Promise((resolve, reject) => {
-        console.log('Parsing CSV data...');
         
         Papa.parse(csvText, {
             header: true,             // Treat the first row as headers
@@ -123,7 +120,6 @@ function populateDataTable(data) {
         tableBody.appendChild(tableRow);
     });
 
-    console.log('Data table populated successfully.');
 }
 
 
